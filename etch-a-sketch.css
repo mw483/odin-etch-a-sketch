@@ -1,0 +1,17 @@
+body { 
+    min-height: 100vh; 
+}
+
+#grid-container {
+    display: flex;
+    width: 80%;
+    height: 80%;
+}
+
+.box {
+    display: flex;
+    border: 2px solid red;
+    width: 25%;
+    height: 25%;
+    margin: 5px;
+}
