@@ -5,8 +5,9 @@ body {
 #grid-container {
     display: flex;
     flex-direction: column;
-    width: 80%;
-    height: 80%;
+    width: fit-content;
+    height: fit-content;
+    border: 2px solid red;
 }
 
 .grid-row {
@@ -15,7 +16,12 @@ body {
 }
 
 .grid-square {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 100px;
     height: 100px;
+}
+
+
+.grid-square:hover {
+    background-color: black;
 }
