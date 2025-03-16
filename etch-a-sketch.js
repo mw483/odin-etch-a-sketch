@@ -12,3 +12,4 @@ for (var j = 0; j < 4; j++)  {
     document.getElementById('grid-container').appendChild(boxRow);
     boxRow.appendChild(fragment);
 }
+
