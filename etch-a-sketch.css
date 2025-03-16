@@ -9,14 +9,13 @@ body {
     height: 80%;
 }
 
-.box-row {
+.grid-row {
     display: flex;
     flex-direction: row;
-    border: 2px solid blue;
-    margin: 5px;
 }
 
-.box {
+.grid-square {
     border: 2px solid red;
-    margin: 5px;    
+    width: 100px;
+    height: 100px;
 }
