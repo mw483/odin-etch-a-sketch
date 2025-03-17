@@ -17,8 +17,8 @@ body {
 
 .grid-square {
     /* border: 2px solid red; */
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
 }
 
 
@@ -26,7 +26,7 @@ body {
     background-color: black;
 }
 
-#generate-button {
+.button-1 {
   background-color: #EA4C89;
   border-radius: 8px;
   border-style: none;
@@ -53,7 +53,7 @@ body {
   touch-action: manipulation;
 }
 
-#generate-button:hover,
-#generate-button:focus {
+.button-1:hover,
+.button-1:focus {
   background-color: #F082AC;
 }
