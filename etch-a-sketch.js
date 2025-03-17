@@ -22,6 +22,7 @@ function generateGrid() {
         for (var j = 0; j < gridSize; j++){
             var gridSquare = document.createElement('div');   
             gridSquare.className = 'grid-square';
+            gridSquare.tabIndex = 1;
             gridSquare.style.height = `${gridHeight}px`
             gridSquare.style.width = `${gridWidth}px`
             gridRow.appendChild(gridSquare).cloneNode(true); 

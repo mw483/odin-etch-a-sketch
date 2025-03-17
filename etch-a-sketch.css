@@ -21,10 +21,14 @@ body {
     height: 50px;
 }
 
-
 .grid-square:hover {
     background-color: black;
 }
+
+.grid-square:focus {
+    background-color: darkgray;
+}
+
 
 .button-1 {
   background-color: #EA4C89;
