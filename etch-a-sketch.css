@@ -1,13 +1,28 @@
 body { 
     min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #f4c2c2;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
 }
 
 #grid-container {
+    margin-right: auto;
+    margin-left: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: fit-content;
     height: fit-content;
-    border: 2px solid red;
 }
 
 .grid-row {
@@ -41,10 +56,12 @@ body {
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 500;
+  width: fit-content;
   height: 40px;
   line-height: 20px;
   list-style: none;
-  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   outline: none;
   padding: 10px 16px;
   position: relative;

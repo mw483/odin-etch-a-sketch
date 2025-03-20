@@ -14,7 +14,10 @@ function generateGrid() {
     gridContainer.innerHTML = '';
     gridSize = setGridSize();
     gridHeight = 960 / gridSize;
-    gridWidth = 960 / gridSize; 
+    gridWidth = 960 / gridSize;
+    gridContainer.style.border = "solid #EA4C89 4px";
+    gridContainer.style.borderRadius = "8px"; 
+    gridContainer.style.backgroundColor = "#ffffff";
     for (var i = 0; i < gridSize; i++)  {
         var gridRow = document.createElement('div');   
         gridRow.className = 'grid-row'; 
