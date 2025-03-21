@@ -9,6 +9,7 @@ function setGridSize() {
 }
 
 /*Generates the grid, by row and then insert the squares in each row*/
+
 function generateGrid() {
     const gridContainer = document.getElementById("grid-container");
     gridContainer.innerHTML = '';
@@ -18,18 +19,12 @@ function generateGrid() {
     gridContainer.style.border = "solid #EA4C89 4px";
     gridContainer.style.borderRadius = "8px"; 
     gridContainer.style.backgroundColor = "#ffffff";
-    for (var i = 0; i < gridSize; i++)  {
-        var gridRow = document.createElement('div');   
-        gridRow.className = 'grid-row'; 
-        gridContainer.appendChild(gridRow);
-        for (var j = 0; j < gridSize; j++){
-            var gridSquare = document.createElement('div');   
-            gridSquare.className = 'grid-square';
-            gridSquare.tabIndex = 1;
-            gridSquare.style.height = `${gridHeight}px`
-            gridSquare.style.width = `${gridWidth}px`
-            gridRow.appendChild(gridSquare).cloneNode(true); 
-        }
+    for (var i = 0; i < gridSize * gridSize ; i++)  {
+        var gridSquare = document.createElement('div');   
+        gridSquare.className = 'grid-square';
+        gridSquare.style.height = `${gridHeight}px`
+        gridSquare.style.width = `${gridWidth}px`
+        gridContainer.appendChild(gridSquare).cloneNode(true); 
     }
 };
 
@@ -47,13 +42,38 @@ function getGridHeight () {
     return height
 }
 
-function sketch() {
-    const sketchGrid = document.querySelectorAll('.grid-square')
+const gridContainer = document.getElementById("grid-container");
+
+/* gridContainer.addEventListener("mousedown", () => {
     for (let i = 0; i < sketchGrid.length; i++) {
         sketchGrid[i].addEventListener("mouseover", function() {
                 sketchGrid[i].classList.add("colored-class");
             });
     };
+});
+
+/* window.addEventListener("mouseup", () => {
+    for (let i = 0; i < sketchGrid.length; i++) {
+        sketchGrid[i].removeEventListener("mouseover", function() {
+                sketchGrid[i].classList.add("colored-class");
+        });
+    };
+}); */
+
+let isMouseDown = false;
+document.addEventListener('mousedown', () => isMouseDown = true);
+document.addEventListener('mouseup', () => isMouseDown = false);
+
+function sketch() {
+    if (!isMouseDown) return;
+    else {
+    const sketchGrid = document.querySelectorAll('.grid-square');
+    for (let i = 0; i < sketchGrid.length; i++) {
+        sketchGrid[i].addEventListener("mouseover", () => {
+            sketchGrid[i].classList.add("colored-class");
+        })
+    };
+    }
 }
 
 /* function erase() {

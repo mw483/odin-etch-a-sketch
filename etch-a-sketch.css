@@ -19,19 +19,19 @@ body {
     margin-right: auto;
     margin-left: auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: fit-content;
+    flex-wrap: wrap;
+    width: 960px;
     height: fit-content;
 }
 
-.grid-row {
+/* .grid-row {
     display: flex;
     flex-direction: row;
-}
+} */
 
 .grid-square {
-    /* border: 2px solid red; */
+    box-sizing: border-box;
+    border: 1px solid rgb(202, 201, 201);
     width: 50px;
     height: 50px;
 }
