@@ -33,8 +33,50 @@ function generateGrid() {
     }
 };
 
-var generateButton = document.getElementById("generate-button");
+function sketch(){
+    const sketchGrid = document.querySelectorAll('.grid-square')
+    for (let i = 0; i < sketchGrid.length; i++) {
+        sketchGrid[i].addEventListener("mouseup", function() {
+          sketchGrid[i].classList.add("colored-class");
+        });
+    }
+    for (let i = 0; i < sketchGrid.length; i++) {
+        sketchGrid[i].addEventListener("mousedown", function() {
+          sketchGrid[i].classList.add("colored-class");
+        });
+    }
+}
 
+function getGridWidth () {
+    var grid = document.getElementsByClassName("grid-square")[0];
+    var sizeInfo = grid.getBoundingClientRect();
+    var width = sizeInfo.width
+    return width
+}
+
+function getGridHeight () {
+    var grid = document.getElementsByClassName("grid-square")[0];
+    var sizeInfo = grid.getBoundingClientRect();
+    var height = sizeInfo.height
+    return height
+}
+
+function clearGrid(){
+    const sketchGrid = document.querySelectorAll('.grid-square');
+    const delta = getGridHeight();
+    let startX;
+    let startY;
+    for (let i = 0; i < sketchGrid.length; i++) {
+        sketchGrid[i].classList.remove("colored-class");
+    }
+}
+
+/* Generate grid using button */
+var generateButton = document.getElementById("generate-button");
 generateButton.onclick = generateGrid;
 
+var sketchButton = document.getElementById("sketch-button")
+sketchButton.onclick = sketch;
 
+var clearButton = document.getElementById("clear-button")
+clearButton.onclick = clearGrid;

@@ -36,14 +36,18 @@ body {
     height: 50px;
 }
 
+/* 
 .grid-square:hover {
     background-color: black;
 }
 
 .grid-square:focus {
     background-color: darkgray;
-}
+} */
 
+.colored-class {
+    background-color: black;
+}
 
 .button-1 {
   background-color: #EA4C89;
