@@ -33,39 +33,31 @@ function generateGrid() {
     }
 };
 
-function sketch(){
-    const sketchGrid = document.querySelectorAll('.grid-square')
-    for (let i = 0; i < sketchGrid.length; i++) {
-        sketchGrid[i].addEventListener("mouseup", function() {
-          sketchGrid[i].classList.add("colored-class");
-        });
-    }
-    for (let i = 0; i < sketchGrid.length; i++) {
-        sketchGrid[i].addEventListener("mousedown", function() {
-          sketchGrid[i].classList.add("colored-class");
-        });
-    }
-}
-
 function getGridWidth () {
     var grid = document.getElementsByClassName("grid-square")[0];
     var sizeInfo = grid.getBoundingClientRect();
-    var width = sizeInfo.width
+    var width = sizeInfo.width;
     return width
 }
 
 function getGridHeight () {
     var grid = document.getElementsByClassName("grid-square")[0];
     var sizeInfo = grid.getBoundingClientRect();
-    var height = sizeInfo.height
+    var height = sizeInfo.height;
     return height
+}
+
+function sketch() {
+    const sketchGrid = document.querySelectorAll('.grid-square')
+    for (let i = 0; i < sketchGrid.length; i++) {
+        sketchGrid[i].addEventListener("mouseover", function() {
+                sketchGrid[i].classList.add("colored-class");
+            });
+    }
 }
 
 function clearGrid(){
     const sketchGrid = document.querySelectorAll('.grid-square');
-    const delta = getGridHeight();
-    let startX;
-    let startY;
     for (let i = 0; i < sketchGrid.length; i++) {
         sketchGrid[i].classList.remove("colored-class");
     }
