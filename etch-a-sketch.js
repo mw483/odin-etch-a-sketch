@@ -53,8 +53,17 @@ function sketch() {
         sketchGrid[i].addEventListener("mouseover", function() {
                 sketchGrid[i].classList.add("colored-class");
             });
-    }
+    };
 }
+
+/* function erase() {
+    const sketchGrid = document.querySelectorAll('.grid-square')
+    for (let i = 0; i < sketchGrid.length; i++) {
+        sketchGrid[i].addEventListener("mouseover", function() {
+                sketchGrid[i].classList.remove("colored-class");
+            });
+    };
+} */
 
 function clearGrid(){
     const sketchGrid = document.querySelectorAll('.grid-square');
@@ -70,5 +79,8 @@ generateButton.onclick = generateGrid;
 var sketchButton = document.getElementById("sketch-button")
 sketchButton.onclick = sketch;
 
+/* var eraserButton = document.getElementById("eraser-button")
+sketchButton.onclick = erase;
+ */
 var clearButton = document.getElementById("clear-button")
 clearButton.onclick = clearGrid;
