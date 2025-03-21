@@ -65,15 +65,15 @@ document.addEventListener('mousedown', () => isMouseDown = true);
 document.addEventListener('mouseup', () => isMouseDown = false);
 
 function sketch() {
-    if (!isMouseDown) return;
-    else {
+    /* if (!isMouseDown) return;
+    else { */
     const sketchGrid = document.querySelectorAll('.grid-square');
     for (let i = 0; i < sketchGrid.length; i++) {
         sketchGrid[i].addEventListener("mouseover", () => {
             sketchGrid[i].classList.add("colored-class");
         })
     };
-    }
+    /* } */
 }
 
 /* function erase() {
