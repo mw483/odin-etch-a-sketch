@@ -1,6 +1,7 @@
 /*Default values*/
 const defaultGridSize = 16
 const defaultColor = 'rgb(0,0,0)'
+const defaultMode = 'pencil'
 
 function random (number) {
     return Math.floor(Math.random()*(number+1))
@@ -18,17 +19,19 @@ function setGridSize() {
     return gridSize
 }
 
-function setColor () {
-    var newColor = defaultColor;
+var currentGridSize = setGridSize();
+
+function setModePencil() {
+    var currentMode = defaultMode;
 }
 
-function changeColor() {
-
+function changeColor(e) {
+    e.target.style.backgroundColor = defaultColor;
 }
 
 /*Generates the grid, by row and then insert the squares in each row*/
 
-function generateGrid() {
+function generateGrid(gridSize) {
     const gridContainer = document.getElementById("grid-container");
     gridContainer.innerHTML = '';
     gridSize = setGridSize();
@@ -40,13 +43,12 @@ function generateGrid() {
     for (var i = 0; i < gridSize * gridSize ; i++)  {
         var gridSquare = document.createElement('div');   
         gridSquare.className = 'grid-square';
-        gridSquare.style.height = `${gridHeight}px`
-        gridSquare.style.width = `${gridWidth}px`
+        gridSquare.style.height = `${gridHeight}px`;
+        gridSquare.style.width = `${gridWidth}px`;
+        gridSquare.addEventListener('mouseover', changeColor);
+        gridSquare.addEventListener('mousedown', changeColor);
         gridContainer.appendChild(gridSquare).cloneNode(true); 
     }
-    gridSquare.addEventListener("mouseover", () => {
-            gridSquare.classList.add("colored-class");
-        })
 };
 
 function getGridWidth () {
@@ -73,18 +75,17 @@ function getGridHeight () {
 } */
 
 function clearGrid(){
-    const sketchGrid = document.querySelectorAll('.grid-square');
-    for (let i = 0; i < sketchGrid.length; i++) {
-        sketchGrid[i].classList.remove("colored-class");
-    }
+    const gridContainer = document.getElementById("grid-container");
+    gridContainer.innerHTML = '';
+    generateGrid(currentGridSize);
 }
 
 /* Generate grid using button */
 var generateButton = document.getElementById("generate-button");
 generateButton.onclick = generateGrid;
 
-/* var sketchButton = document.getElementById("sketch-button")
-sketchButton.onclick = sketch; */
+var pencilButton = document.getElementById("pencil-button")
+pencilButton.onclick = setModePencil();
 
 /* var eraserButton = document.getElementById("eraser-button")
 sketchButton.onclick = erase;
