@@ -1,7 +1,8 @@
 /*Default values*/
-const defaultGridSize = 16
-const defaultColor = 'rgb(0,0,0)'
-const defaultMode = 'pencil'
+const defaultGridSize = 16;
+const defaultColor = 'rgb(0,0,0)';
+var currentColor = defaultColor;
+const defaultMode = 'pencil';
 
 let isMouseDown = false;
 document.getElementById('grid-container').onmousedown = () => (isMouseDown = true);
@@ -9,10 +10,10 @@ document.getElementById('grid-container').onmouseup = () => (isMouseDown = false
 
 
 function random (number) {
-    return Math.floor(Math.random()*(number+1))
+    return Math.floor(Math.random()*(number+1));
 }
 
-var rainbowColor = `rgb(${random(255)},${random(255)},${random(255)})`
+var rainbowColor = `rgb(${random(255)},${random(255)},${random(255)})`;
 
 /*Set grid size */
 function setGridSize() {
@@ -26,16 +27,11 @@ function setGridSize() {
 
 var currentGridSize = setGridSize();
 
-function setModePencil() {
-    var currentMode = defaultMode;
-}
-
 function changeColor(e) {
-    if (e.type === 'mouseover' && !mouseDown) return
+    if (e.type === 'mouseover' && !isMouseDown) return
     else {
-        e.target.style.backgroundColor = defaultColor;
+        e.target.style.backgroundColor = currentColor;
     }
-    
 }
 
 /*Generates the grid*/
@@ -93,11 +89,15 @@ function clearGrid(){
 var generateButton = document.getElementById("generate-button");
 generateButton.onclick = generateGrid;
 
-var pencilButton = document.getElementById("pencil-button")
-pencilButton.onclick = setModePencil();
-
-/* var eraserButton = document.getElementById("eraser-button")
-sketchButton.onclick = erase;
- */
 var clearButton = document.getElementById("clear-button")
 clearButton.onclick = clearGrid;
+
+var pencilButton = document.getElementById("pencil-button")
+pencilButton.onclick = function () {
+    currentColor = defaultColor
+};
+
+var eraserButton = document.getElementById("eraser-button")
+eraserButton.onclick = function () {
+    currentColor = '#FFFFFF'
+};
