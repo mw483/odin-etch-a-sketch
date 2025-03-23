@@ -1,3 +1,15 @@
+/* Twice member colors
+"#49c0ec"
+"#a3cc54"
+"#e67ea3"
+"#8c79b4"
+"f9ccb5"
+"71c7d4"
+"fefefe"
+"e62722"
+"2253a3"
+*/
+
 body { 
     min-height: 100vh; 
     display: flex;
@@ -13,6 +25,13 @@ body {
 .title-container {
     display: flex;
     justify-content: center;
+    color: #FFFFFF;
+}
+
+#size-input {
+    width: 20%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #grid-container {
@@ -23,11 +42,6 @@ body {
     width: 960px;
     height: fit-content;
 }
-
-/* .grid-row {
-    display: flex;
-    flex-direction: row;
-} */
 
 .grid-square {
     box-sizing: border-box;
