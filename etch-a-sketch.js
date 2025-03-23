@@ -3,6 +3,11 @@ const defaultGridSize = 16
 const defaultColor = 'rgb(0,0,0)'
 const defaultMode = 'pencil'
 
+let isMouseDown = false;
+document.getElementById('grid-container').onmousedown = () => (isMouseDown = true);
+document.getElementById('grid-container').onmouseup = () => (isMouseDown = false);
+
+
 function random (number) {
     return Math.floor(Math.random()*(number+1))
 }
@@ -26,10 +31,14 @@ function setModePencil() {
 }
 
 function changeColor(e) {
-    e.target.style.backgroundColor = defaultColor;
+    if (e.type === 'mouseover' && !mouseDown) return
+    else {
+        e.target.style.backgroundColor = defaultColor;
+    }
+    
 }
 
-/*Generates the grid, by row and then insert the squares in each row*/
+/*Generates the grid*/
 
 function generateGrid(gridSize) {
     const gridContainer = document.getElementById("grid-container");
