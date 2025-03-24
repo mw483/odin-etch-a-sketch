@@ -27,7 +27,7 @@ function nineColor () {
 "#8c79b4",
 "#ffc56e",
 "#6dcdb8",
-"#fefefe",
+"#f7f7f7",
 "#e62722",
 "#2253a3"]
     return nineColor[Math.floor(Math.random() * nineColor.length)]
