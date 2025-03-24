@@ -3,8 +3,8 @@
 "#a3cc54"
 "#e67ea3"
 "#8c79b4"
-"f9ccb5"
-"71c7d4"
+"#ffc56e"
+"6dcdb8"
 "fefefe"
 "e62722"
 "2253a3"
@@ -61,6 +61,15 @@ body {
 
 .colored-square {
     background-color: black;
+}
+
+.button-container {
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .button-1 {
