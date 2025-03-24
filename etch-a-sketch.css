@@ -26,6 +26,7 @@ body {
     display: flex;
     justify-content: center;
     color: #FFFFFF;
+    -webkit-text-stroke: #EA4C89 1px;
 }
 
 #size-input {
