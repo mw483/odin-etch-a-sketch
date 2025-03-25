@@ -20,6 +20,7 @@ function randomColor () {
     return rainbowColor
 }
 
+
 function nineColor () {
     const nineColor = ["#49c0ec",
 "#a3cc54",
